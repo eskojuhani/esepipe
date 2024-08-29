@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: eskojuhaniesepipe 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: eskojuhaniesepipe
+  template:
+    metadata:
+      labels:
+        app: eskojuhaniesepipe 
+    spec:
+      containers:
+        - name: eskojuhaniesepipe 
+          image: esecontainerregistry.azurecr.io/eskojuhaniesepipe
+          ports:
+          - containerPort: 8080
